@@ -1,0 +1,45 @@
+<button class="btn btn-warning" data-toggle="modal"  [disabled]="isDisabled()"  [attr.data-target]="'#exampleModal' + movie.title.split(' ').join('')">Rate Movie</button>
+<div class="modal fade" [attr.id]="'exampleModal' + movie.title.split(' ').join('')"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{movie.title}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="rating">
+              <input [attr.id]="'rating5'  + movie.title.split(' ').join('')" type="radio" name="rating" value="5"
+              [checked]="rating === 5" (change)="onChange(5)">
+              <label [attr.for]="'rating5'  + movie.title.split(' ').join('')" (click)="input.checked == true"></label>
+              <input [attr.id]="'rating4'  + movie.title.split(' ').join('')" type="radio" name="rating" value="4"
+               [checked]="rating === 4" (change)="onChange(4)">
+            
+              <label [attr.for]="'rating4'  + movie.title.split(' ').join('')"></label>
+            
+              <input [attr.id]="'rating3'  + movie.title.split(' ').join('')" type="radio" name="rating" value="3"
+              [checked]="rating === 3" (change)="onChange(3)">
+            
+              <label [attr.for]="'rating3'  + movie.title.split(' ').join('')"></label>
+            
+              <input [attr.id]="'rating2'  + movie.title.split(' ').join('')" type="radio" name="rating" value="2"
+              [checked]="rating === 2" (change)="onChange(2)">
+            
+              <label [attr.for]="'rating2'  + movie.title.split(' ').join('')"></label>
+    
+              <input [attr.id]="'rating1'  + movie.title.split(' ').join('')" type="radio" name="rating"
+              value="1" [checked]="rating === 1" (change)="onChange(1)">
+            
+              <label [attr.for]="'rating1'  + movie.title.split(' ').join('')"></label>
+            
+          </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="rateMovie()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>

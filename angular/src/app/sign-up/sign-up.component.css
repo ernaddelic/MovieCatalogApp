@@ -1,0 +1,17 @@
+.col-md-6 {
+    margin: 100px auto;
+}
+.error {
+    border: 1px solid red;
+}
+.btn {
+    display: flex;
+    justify-content: space-between;
+    width: 110px;
+    align-items: center;
+    margin-top: 50px;
+}
+.msg {
+    position: absolute;
+    color: red;
+}

@@ -1,0 +1,14 @@
+<div class="card mb-3" *ngFor="let ratedMovie of ratedMovies">
+    <img [src]="ratedMovie.imgUrl" class="card-img-top" alt="..." height="300">
+    <div class="card-body">
+      <h5 class="card-title">{{ratedMovie.title}}</h5>
+      <p class="card-text">{{ratedMovie.productionCompany}}</p>
+      <p class="card-text">
+        <span class="fa fa-star" [class.checked]="isChecked(1, +ratedMovie.rating)"></span>
+        <span class="fa fa-star" [class.checked]='isChecked(2, +ratedMovie.rating)'></span>
+        <span class="fa fa-star" [class.checked]='isChecked(3, +ratedMovie.rating)'></span>
+        <span class="fa fa-star" [class.checked]='isChecked(4, +ratedMovie.rating)'></span>
+        <span class="fa fa-star" [class.checked]='isChecked(5, +ratedMovie.rating)'></span>
+    </p>
+    </div>
+  </div>
