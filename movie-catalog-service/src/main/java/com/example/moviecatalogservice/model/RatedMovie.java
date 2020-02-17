@@ -2,6 +2,7 @@ package com.example.moviecatalogservice.model;
 
 public class RatedMovie extends Movie {
 
+    private static final long serialVersionUID = 1L;
     private String rating;
 
     public String getRating() {

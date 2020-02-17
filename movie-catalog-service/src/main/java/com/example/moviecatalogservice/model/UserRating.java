@@ -1,15 +1,18 @@
 package com.example.moviecatalogservice.model;
 
-public class UserRating {
+import java.io.Serializable;
 
+public class UserRating implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String id;
     private String movieId;
-    private String name;
+    private String username;
     private String rating;
 
     public UserRating(String movieId, String name) {
         this.movieId = movieId;
-        this.name = name;
+        this.username = name;
     }
 
     public UserRating() {}
@@ -30,12 +33,12 @@ public class UserRating {
         this.movieId = movieId;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.username = name;
     }
 
     public String getRating() {

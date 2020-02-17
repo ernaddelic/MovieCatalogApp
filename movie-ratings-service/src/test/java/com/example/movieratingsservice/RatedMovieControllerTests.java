@@ -20,7 +20,7 @@ public class RatedMovieControllerTests {
         when(ratedMovieRepository.findByUsername("user")).thenReturn(Flux.just(ratedMovie));
         WebTestClient testClient = WebTestClient.bindToController(new RatedMovieController(ratedMovieRepository)).build();
         testClient.get().uri("/rate/user/user").exchange().expectBody().jsonPath("$").isNotEmpty()
-        .jsonPath("$[0].movieId").isEqualTo("1").jsonPath("$[0].name").isEqualTo("user")
+        .jsonPath("$[0].movieId").isEqualTo("1").jsonPath("$[0].username").isEqualTo("user")
         .jsonPath("$[0].rating").isEqualTo("5");
     }
 }
